@@ -1,0 +1,8 @@
+from django.db import models
+
+
+class Movie(models.Model):
+    title = models.CharField(max_length=100)
+    releaseYear = models.PositiveSmallIntegerField(blank=True, null=True)
+    poster = models.ImageField(upload_to='images/')
+    created = models.DateTimeField(auto_now_add=True)
