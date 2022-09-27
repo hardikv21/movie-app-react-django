@@ -6,3 +6,5 @@ class Movie(models.Model):
     releaseYear = models.PositiveSmallIntegerField(blank=True, null=True)
     poster = models.ImageField(upload_to='images/')
     created = models.DateTimeField(auto_now_add=True)
+    like = models.IntegerField(default=0)
+    dislike = models.IntegerField(default=0)
