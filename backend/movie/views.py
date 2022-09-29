@@ -19,19 +19,3 @@ class MovieViewSet(viewsets.ModelViewSet):
     filter_backends = [filters.SearchFilter]
     search_fields = ['title']
     parser_classes = (MultiPartParser, FormParser)
-
-    # def list(self, request):
-    #     header = {
-    #         "Content-Type":"application/json",
-    #         "X-Client-Id":None,
-    #         "X-Client-Secret":None,
-    #     }
-    #     response = requests.get('http://www.omdbapi.com?apikey=f0e7f017&s=war&page=3', headers=header)
-    #     response = response.json()
-    #     for item in response["Search"]:
-    #         print(item["Title"])
-    #         Movie.objects.create(title=item["Title"], releaseYear=item["Year"], poster="N/A")
-            
-    #     movies = Movie.objects.all()
-    #     serializer = MovieSerializer(movies, many=True)
-    #     return Response(serializer.data)
