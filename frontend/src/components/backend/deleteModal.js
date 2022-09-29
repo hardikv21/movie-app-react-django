@@ -30,7 +30,7 @@ const DeleteModal = ({ props }) => {
                     <Button
                         variant='outlined'
                         color='error'
-                        onClick={props.deleteMovie}
+                        onClick={() => props.deleteMovie(props.id)}
                     >Delete</Button>
                 </Box>
             </Box>

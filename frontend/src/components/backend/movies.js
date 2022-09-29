@@ -53,7 +53,10 @@ const Movies = ({ props }) => {
                 }
             }
         )
-            .then(getMovies)
+            .then(() => {
+                getMovies();
+                handleCloseAddModal();
+            })
             .catch((error) => setError(error.message));
     }
 
@@ -67,11 +70,7 @@ const Movies = ({ props }) => {
                 }
             }
         )
-            .then((response) => {
-                const temp = {...movies};
-                temp[response.data.id.toString()] = response.data;
-                setMovies(temp);    
-            })
+            .then(getMovies)
             .catch((error) => setError(error.message));
     }
 

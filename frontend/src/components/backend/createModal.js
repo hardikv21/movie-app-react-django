@@ -13,7 +13,25 @@ const style = {
 };
 
 const CreateModal = ({ props }) => {
-    const [movie, setMovie] = useState({ title: 'a', releaseYear: '21', like: 0, dislike: 0, poster: null });
+    const [movie, setMovie] = useState({
+        title: '',
+        releaseYear: '',
+        poster: null,
+        like: 0,
+        dislike: 0
+    });
+
+    const handleCloseAddModal = () => {
+        setMovie({
+            ...movie,
+            title: '',
+            releaseYear: '',
+            poster: null,
+            like: 0,
+            dislike: 0
+        });
+        props.handleCloseAddModal();
+    };
 
     const handleCapture = (event) => {
         setMovie({
@@ -24,7 +42,7 @@ const CreateModal = ({ props }) => {
 
     const handleAdd = (e) => {
         e.preventDefault();
-        
+
         let form_data = new FormData();
         form_data.append('poster', movie.poster, movie.poster.name);
         form_data.append('title', movie.title);
@@ -32,13 +50,14 @@ const CreateModal = ({ props }) => {
         form_data.append('like', movie.like);
         form_data.append('dislike', movie.dislike);
 
+        handleCloseAddModal();
         props.addMovie(form_data);
-    }
+    };
 
     return (
         <Modal
             open={props.openAddModal}
-            onClose={props.handleCloseAddModal}
+            onClose={handleCloseAddModal}
         >
             <Box sx={style}>
                 <Typography id='add-modal-title' variant='h6' component='h2' sx={{ justifyContent: 'center' }}>
@@ -51,6 +70,7 @@ const CreateModal = ({ props }) => {
                         label='Name'
                         onChange={(event) => setMovie({ ...movie, title: event.target.value })}
                         required
+                        value={movie.title}
                     /><br /><br />
                     <TextField
                         id='releaseYear'
@@ -58,6 +78,7 @@ const CreateModal = ({ props }) => {
                         label='Release Year'
                         onChange={(event) => setMovie({ ...movie, releaseYear: event.target.value })}
                         required
+                        value={movie.releaseYear}
                     /><br /><br />
                     <input
                         accept='image/*'
@@ -93,13 +114,13 @@ const CreateModal = ({ props }) => {
                 <Box sx={{ display: 'flex', justifyContent: 'space-around', marginTop: '2%' }}>
                     <Button
                         variant='outlined'
-                        onClick={props.handleCloseAddModal}
+                        onClick={handleCloseAddModal}
                     >Cancel</Button>
                     <Button
                         variant='outlined'
                         color='warning'
                         onClick={handleAdd}
-                        disabled={!movie.title || !movie.releaseYear}
+                        disabled={!movie.title || !movie.releaseYear || !movie.poster}
                     >Add</Button>
                 </Box>
             </Box>
