@@ -5,7 +5,7 @@ import OmdbComponent from './components/omdb/omdb';
 import BackendComponent from './components/backend/backend';
 
 const App = () => {
-  const [value, setValue] = useState('backend');
+  const [value, setValue] = useState('omdb');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
