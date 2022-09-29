@@ -33,3 +33,24 @@
   - Make sure this database uses "5432" port while running
   - Once database created, use dump which is located at the root level of the "backend" folder with the name "backup" to restore the data
   - Follow this instructions to restore the data in pgAdmin - https://www.pgadmin.org/docs/pgadmin4/development/restore_dialog.html
+  
+* Fourth, , install dependencies and run the frontend
+  - Install dependencies
+  ```
+    cd ..\frontend\
+    npm install
+  ```
+  - Then create ".env" file in the same level with 1 variable: "REACT_APP_API_KEY"
+  - Get value from this url - http://www.omdbapi.com/apikey.aspx and paste that value in the ".env" file
+  - Run frontend
+  ```
+  npm start
+  ```
+
+## Website look
+
+* OMDB MOVIES Tab
+  - ![image](https://user-images.githubusercontent.com/43430462/193110298-5d55777c-1bed-429f-841f-8ef6c90efb80.png)
+  - ![image](https://user-images.githubusercontent.com/43430462/193110484-21ca2b2a-6e81-485c-965d-c3e757196029.png)
+
+* BACKEND MOVIES Tab
