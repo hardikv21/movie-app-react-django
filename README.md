@@ -65,6 +65,7 @@
   ![image](https://user-images.githubusercontent.com/43430462/193125932-da9715ca-6869-4047-8eb7-126ad6b8c906.png)
   - Clicking on the "Delete" button will open delete modal
   ![image](https://user-images.githubusercontent.com/43430462/193126116-e9f95c6d-17a1-4b7a-9dbc-20b74022ee3a.png)
-  - ![image](https://user-images.githubusercontent.com/43430462/193126229-30364105-4381-4446-be8c-7aac23f7eaca.png)
-  - ![image](https://user-images.githubusercontent.com/43430462/193126329-4d06215e-a9d3-4f2e-8b55-eda94d7ba0c3.png)
+  - - Clicking on the "Edit" button will open update modal
+  ![image](https://user-images.githubusercontent.com/43430462/193126229-30364105-4381-4446-be8c-7aac23f7eaca.png)
+  ![image](https://user-images.githubusercontent.com/43430462/193126329-4d06215e-a9d3-4f2e-8b55-eda94d7ba0c3.png)
   
