@@ -1,6 +1,7 @@
-from rest_framework import viewsets, filters
+from rest_framework import viewsets, filters, status
 from rest_framework.response import Response
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.parsers import MultiPartParser, FormParser
 import requests
 
 from movie.models import Movie
@@ -17,19 +18,31 @@ class MovieViewSet(viewsets.ModelViewSet):
     pagination_class = StandardResultsSetPagination
     filter_backends = [filters.SearchFilter]
     search_fields = ['title']
+    parser_classes = (MultiPartParser, FormParser)
 
-    # def list(self, request):
-    #     header = {
-    #         "Content-Type":"application/json",
-    #         "X-Client-Id":None,
-    #         "X-Client-Secret":None,
-    #     }
-    #     response = requests.get('http://www.omdbapi.com?apikey=f0e7f017&s=koi&page=1', headers=header)
-    #     response = response.json()
-    #     for item in response["Search"]:
-    #         print(item["Title"])
-    #         Movie.objects.create(title=item["Title"], releaseYear=item["Year"], poster=item["Poster"])
-            
-    #     movies = Movie.objects.all()
-    #     serializer = MovieSerializer(movies, many=True)
-    #     return Response(serializer.data)
+    def post(self, request, *args, **kwargs):
+        serializer = MovieSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def update(self, request, pk, *args, **kwargs):
+        todo_instance = self.get_object()
+        if not todo_instance:
+            return Response(
+                {"res": "Object with todo id does not exists"}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        data = {
+            'title': request.data.get('title'), 
+            'releaseYear': request.data.get('releaseYear'),
+            # 'poster': request.data.get('poster'),
+            'like': request.data.get('like'), 
+            'dislike': request.data.get('dislike')
+        }
+        serializer = MovieSerializer(instance = todo_instance, data=data, partial = True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
