@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, IconButton } from '@mui/material';
 import { ThumbUpOffAlt, ThumbDownOffAlt, Edit, Delete } from '@mui/icons-material';
-import UpdateModal from './updateModal';
-import DeleteModal from './deleteModal';
+import UpdateModal from './modals/updateModal';
+import DeleteModal from './modals/deleteModal';
 
 const MovieDisplay = ({ props }) => {
     const [openUpdateModal, setOpenUpdateModal] = useState(false);

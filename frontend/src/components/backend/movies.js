@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Pagination, Typography, Box, Grid, Button } from '@mui/material';
 import { Add } from '@mui/icons-material';
 import MovieDisplay from './movieDisplay';
-import CreateModal from './createModal';
+import CreateModal from './modals/createModal';
 
 const Movies = ({ props }) => {
     const [movies, setMovies] = useState({});
