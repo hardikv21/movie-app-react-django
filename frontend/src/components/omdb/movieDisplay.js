@@ -2,11 +2,15 @@ import * as React from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
 
 const MovieDisplay = ({ props }) => (
-    <Card sx={{ width: 200 }}>      
+    <Card sx={{ maxWidth: 200, minWidth: 250 }}>      
         <CardMedia
             component='img'
             image={props.movie.Poster}
             alt='N/A'
+            sx={{
+                minWidth: 200,
+                maxWidth: 250,
+            }}
         />
         <CardContent>
             <Typography gutterBottom variant='h6' component='div'>

@@ -24,7 +24,6 @@ const MovieDisplay = ({ props }) => {
         form_data.append('id', movie.id);
         form_data.append('title', movie.title);
         form_data.append('releaseYear', movie.releaseYear);
-        form_data.append('poster', movie.poster);
         form_data.append('like', movie.like);
         form_data.append('dislike', movie.dislike);
 
@@ -32,11 +31,15 @@ const MovieDisplay = ({ props }) => {
     };
 
     return (
-        <Card sx={{ width: 200 }}>      
+        <Card sx={{ maxWidth: 200, minWidth: 250 }}>      
             <CardMedia
                 component='img'
                 image={props.movie.poster}
                 alt='N/A'
+                sx={{
+                    minWidth: 200,
+                    maxWidth: 250,
+                }}
             />
             <CardContent>
                 <Typography gutterBottom variant='h6' component='div'>

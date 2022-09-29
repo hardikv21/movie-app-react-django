@@ -16,10 +16,9 @@ const UpdateModal = ({ props }) => {
     const [movie, setMovie] = useState(props.movie);
 
     const handleCapture = (event) => {
-        setMovie({
-            ...movie,
-            poster: event.target.files[0],
-        })
+        let temp = { ...movie };
+        temp.poster = event.target.files[0];
+        setMovie(temp);
     };
 
     const handleUpdate = (e) => {
@@ -29,7 +28,9 @@ const UpdateModal = ({ props }) => {
         form_data.append('id', movie.id);
         form_data.append('title', movie.title);
         form_data.append('releaseYear', movie.releaseYear);
-        form_data.append('poster', movie.poster, movie.poster.name);
+        if (movie.poster) {
+            form_data.append("poster", movie.poster, movie.poster.name);
+        }
         form_data.append('like', movie.like);
         form_data.append('dislike', movie.dislike);
 

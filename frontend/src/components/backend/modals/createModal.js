@@ -34,19 +34,20 @@ const CreateModal = ({ props }) => {
     };
 
     const handleCapture = (event) => {
-        setMovie({
-            ...movie,
-            poster: event.target.files[0],
-        })
+        let temp = { ...movie };
+        temp.poster = event.target.files[0];
+        setMovie(temp);
     };
 
     const handleAdd = (e) => {
         e.preventDefault();
 
         let form_data = new FormData();
-        form_data.append('poster', movie.poster, movie.poster.name);
         form_data.append('title', movie.title);
         form_data.append('releaseYear', movie.releaseYear);
+        if (movie.poster) {
+            form_data.append("poster", movie.poster, movie.poster.name);
+        }
         form_data.append('like', movie.like);
         form_data.append('dislike', movie.dislike);
 
@@ -81,7 +82,7 @@ const CreateModal = ({ props }) => {
                         value={movie.releaseYear}
                     /><br /><br />
                     <input
-                        accept='image/*'
+                        accept="image/jpeg,image/png"
                         style={{ display: 'none' }}
                         id='image-upload'
                         type='file'
