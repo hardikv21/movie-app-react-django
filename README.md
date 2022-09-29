@@ -54,3 +54,11 @@
   - ![image](https://user-images.githubusercontent.com/43430462/193110484-21ca2b2a-6e81-485c-965d-c3e757196029.png)
 
 * BACKEND MOVIES Tab
+  - ![image](https://user-images.githubusercontent.com/43430462/193125589-693558e4-721b-4dc8-a941-d99e7aa95c6e.png)
+  - ![image](https://user-images.githubusercontent.com/43430462/193125674-430741f2-6272-4885-90b1-6ed056c7bd49.png)
+  - ![image](https://user-images.githubusercontent.com/43430462/193125842-29c01457-94f8-46eb-8d86-6b3f23f8803a.png)
+  - ![image](https://user-images.githubusercontent.com/43430462/193125932-da9715ca-6869-4047-8eb7-126ad6b8c906.png)
+  - ![image](https://user-images.githubusercontent.com/43430462/193126116-e9f95c6d-17a1-4b7a-9dbc-20b74022ee3a.png)
+  - ![image](https://user-images.githubusercontent.com/43430462/193126229-30364105-4381-4446-be8c-7aac23f7eaca.png)
+  - ![image](https://user-images.githubusercontent.com/43430462/193126329-4d06215e-a9d3-4f2e-8b55-eda94d7ba0c3.png)
+  
