@@ -3,7 +3,7 @@ import { useState } from 'react';
 import SearchBox from '../commonComponents/searchBox';
 import Movies from './movies';
 
-const OmdbComponent = () => {
+const BackendComponent = () => {
     const [search, setSearch] = useState('');
 
     return (
@@ -14,4 +14,4 @@ const OmdbComponent = () => {
     )
 };
 
-export default OmdbComponent;
+export default BackendComponent;

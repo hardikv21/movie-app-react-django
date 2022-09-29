@@ -20,7 +20,7 @@ const Movies = ({ props }) => {
                     setError(response.data.Error);
                 }
             })
-            .catch((error) => console.log(error));
+            .catch((error) => setError(error.message));
     }, [props.search]);
 
     const handlePageChange = (page) => {
@@ -34,7 +34,7 @@ const Movies = ({ props }) => {
                     setError(response.data.Error);
                 }
             })
-            .catch((error) => console.log(error));
+            .catch((error) => setError(error.message));
     };
 
     return (

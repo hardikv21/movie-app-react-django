@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Box, Tab } from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import OmdbComponent from './components/omdb/omdb';
+import BackendComponent from './components/backend/backend';
 
 const App = () => {
-  const [value, setValue] = useState('omdb');
+  const [value, setValue] = useState('backend');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -15,14 +16,16 @@ const App = () => {
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange}>
-            <Tab label="OMDB Movies" value="omdb" />
-            <Tab label="Backend Movies" value="backend" />
+            <Tab label='OMDB Movies' value='omdb' />
+            <Tab label='Backend Movies' value='backend' />
           </TabList>
         </Box>
-        <TabPanel value="omdb">
+        <TabPanel value='omdb'>
           <OmdbComponent />
         </TabPanel>
-        <TabPanel value="backend">Item Two</TabPanel>
+        <TabPanel value='backend'>
+          <BackendComponent />
+        </TabPanel>
       </TabContext>
     </Box>
   );
