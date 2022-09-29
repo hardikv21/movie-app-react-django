@@ -69,8 +69,8 @@
   ![image](https://user-images.githubusercontent.com/43430462/193126229-30364105-4381-4446-be8c-7aac23f7eaca.png)
   ![image](https://user-images.githubusercontent.com/43430462/193126329-4d06215e-a9d3-4f2e-8b55-eda94d7ba0c3.png)
   - Clicking on the "Thumbs Up" button will increase like
-  ![image](https://user-images.githubusercontent.com/43430462/193138023-1d2ac1a8-5dff-4957-952d-c6eb3371898f.png)
-  ![image](https://user-images.githubusercontent.com/43430462/193138136-e5fdbc1a-9fce-4dde-b668-54cdd70111d0.png)
+  - ![image](https://user-images.githubusercontent.com/43430462/193138023-1d2ac1a8-5dff-4957-952d-c6eb3371898f.png)
+  - ![image](https://user-images.githubusercontent.com/43430462/193138136-e5fdbc1a-9fce-4dde-b668-54cdd70111d0.png)
   - Clicking on the "Thumbs Down" button will increase dislike
   ![image](https://user-images.githubusercontent.com/43430462/193138136-e5fdbc1a-9fce-4dde-b668-54cdd70111d0.png)
   ![image](https://user-images.githubusercontent.com/43430462/193138288-0c90110b-7922-477a-9255-37cab700c748.png)
